@@ -1,0 +1,11 @@
+﻿comando:
+    django-admin startproject AprendiendoDjango
+
+    python manage.py migrate
+
+    python manage.py startapp miapp
+
+    python manage.py runserver
+
+url: http://127.0.0.1:8000/
+
