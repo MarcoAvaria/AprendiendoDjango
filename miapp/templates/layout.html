@@ -1,0 +1,57 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        {% block title %}
+         
+        {% endblock %}
+            by Marco Avaria
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+</head>
+
+<body>
+    <!-- Header de la página -->
+    <header>
+       <div id='logotipo'>
+           <!-- Aquí va el logo -->
+           <img src="{% static 'images/logo.png' %}">
+           <h1>WebSite with Django | Marco Avaria</h1>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="/inicio">Inicio</a>
+            </li>
+            <li>
+                <a href="/hola-mundo">Hola Mundo</a>
+            </li>
+            <li>
+                <a href="/pagina-pruebas">Página de pruebas</a>
+            </li>
+            <li>
+                <a href="/contacto">Contacto</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="content">
+        <h2 class="title">Aquí va el título</h2>
+        {% block content %}
+            <strong>Contenido del bloque original</strong> 
+        {% endblock %}
+    </div>
+
+    <footer>
+        Master en Python &copy; Marco Avaria
+    </footer>    
+</body>
+
+
+</html>

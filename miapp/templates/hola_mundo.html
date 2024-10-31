@@ -1,0 +1,10 @@
+﻿{% extends 'layout.html' %}
+
+{% block title %} Hola Mundo en Django {% endblock %}
+
+{% block content %}
+    <!-- block.super sirve para llamar el content original -->
+    {{ block.super }}
+    <h1>Hola mundo con Django!!</h1>
+    <h3>Soy Marco Avaria, Ingeniero Informático</h3>
+{% endblock %}
