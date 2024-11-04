@@ -23,11 +23,14 @@ import miapp.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', miapp.views.index, name="index"),
-    path('inicio/', miapp.views.index, name="Inicio"),
-    path('hola-mundo/', miapp.views.hola_mundo, name="hola_mundo"),
-    path('pagina-pruebas/', miapp.views.pagina, name="pagina"),
-    path('pagina-pruebas/<int:redirigir>', miapp.views.pagina, name="pagina"),
+    path('inicio/', miapp.views.index, name="inicio"),
+    path('hola-mundo/', miapp.views.hola_mundo, name="hola-mundo"),
+    path('pagina-pruebas/', miapp.views.pagina, name="pagina-pruebas"),
+    path('pagina-pruebas/<int:redirigir>', miapp.views.pagina, name="pagina-pruebas"),
     path('contacto/', miapp.views.contacto, name="contacto"),
     path('contacto/<str:nombre>/', miapp.views.contacto, name="contacto"),
-    path('contacto/<str:nombre>/<str:apellidos>', miapp.views.contacto, name="contacto")
+    path('contacto/<str:nombre>/<str:apellidos>', miapp.views.contacto, name="contacto"),
+    path('crear-articulo/<str:title>/<str:content>/<str:public>', miapp.views.crear_articulo, name="crear_articulo"),
+    path('articulo/', miapp.views.articulo, name="articulo"),
+    path('editar-articulo/<int:id>', miapp.views.editar_articulo)
 ]

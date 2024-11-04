@@ -3,6 +3,39 @@
 {% block title %} Inicio {% endblock %}
 
 {% block content %}
-<h1>Inicio</h1>
-<p>Años hasta el 2050:</p>
+
+<!-- Comentario 1 estilo html -->
+{% comment 'Comentario 2 estilo Django'%}
+    <h1> Hola hola hola, esto tampoco se muestra</h1>
+{% endcomment %}
+
+<h1 class="title">{{title}}</h1>
+
+<p>{{mi_variable}}</p>
+
+{% if nombre and nombre == 'Marco Avaria'%}
+    <p>{{nombre}}</p>
+{% else %}
+    <strong>El nombre no existe o no coincide</strong>
+{% endif %}
+
+<h3>Listado de lenguajes de programación</h3>
+<ul>
+    {% for lenguaje in lenguajes %}
+        {% comment 'De forloop existen varias opciones'%}
+            - forloop.first
+            - forloop.last
+            - forloop.counter
+            - forloop.counter0
+            - forloop.revcounter
+            - forloop.revcounter0
+        {% endcomment%}
+        <li>{{forloop.counter}}. {{lenguaje}}</li>
+    {% empty %}
+        <p>No hay lenguajes que mostrar </p>
+    {% endfor %}
+</ul>
+
+{% include 'fecha-actual.html' with saludo="Hola mundo desde la plantilla: " %}
+
 {% endblock %}

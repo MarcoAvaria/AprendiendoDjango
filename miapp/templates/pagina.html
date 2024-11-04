@@ -4,7 +4,69 @@
 
 {% block content %}
 
-<h1>Página de mi web</h1>
-<h3>Creado por Marco Avaria</h3>
+<h1 class="title">Mi página web</h1>
+{% comment 'Comentarios de comandos y filtros' %}
+    cut:
+        Esta instrucción elimina los espacios vacíos del string
+        <h3>{{ "Creado por Marco Avaria"|cut:" " }}</h3>
+
+        Esta instrucción elimina los caracteres "o" del string
+        <h3>{{ "Creado por Marco Avaria"|cut:"o" }}</h3>
+
+    default:
+        Esta instrucción entrega un resultado por defecto en caso de estar vacía la variable
+        {{ texto|default:"no hay nada" }}
+
+    first: Arroja el primer elemento de la lista
+    last: Arroja el último elemento de la lista
+    join: Agrega un String o caracter para unir los elementos de la lista
+    length: Arroja el tamaño de la lista o string
+
+{% endcomment %}
+
+<p>{{ "Creado por Marco Avaria" }}</p>
+
+<p>
+    {{ texto|default:"no hay nada" }}
+</p>
+
+<p>
+    {{lista|first}}
+</p>
+
+<p>
+    {{lista|last}}
+</p>
+
+<p>
+    {{lista|join:', '}}
+</p>
+
+<p>
+    {{lista|length}}
+</p>
+
+<p>
+    {{"Esto es una prueba"|length}}
+</p>
+
+<p>
+    {{"Esto es una prueba"|length}}
+</p>
+
+<p>
+    {{"<h1>texTO</h1> <strong>Esto es una prueba</strong>"|lower}}
+</p>
+
+<p>
+    {{"<h1>texTO</h1> <strong>Esto es una prueba</strong>"|striptags}}
+</p>
+
+<p>
+    {{"<h1>texTO</h1> <strong>Esto es una prueba</strong>"|striptags|wordcount}}
+</p>
+
+{% load filters %}
+{{ "Marco Avaria - Ingeniero Informático"|saludo|safe }}
 
 {% endblock %}

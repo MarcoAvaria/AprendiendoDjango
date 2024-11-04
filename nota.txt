@@ -9,3 +9,28 @@
 
 url: http://127.0.0.1:8000/
 
+para crear migraciones de modelos:
+    en cd de proyecto: python manage.py makemigrations
+
+luego se crea el sql en SGDB (Sistema Gestor Base de datos) para crear las tablas, estructura de base datos...:
+    en cd de proyecto: python manage.py sqlmigrate miapp 0001
+
+    "miapp" se coloca porque en este caso es el nombre de la aplicación creada,
+    El 0001 es el número de la migración creada anteriormente, que se obtuve anteriormente en:
+        cd de proyecto: python manage.py makemigrations
+    es el archivo de ruta: miapp\migrations\0001_initial.py
+
+luego para aplicar los cambios:
+    python manage.py migrate
+
+Si quiero agregar atritubos y/o modelos (class) en el archivo models.py y/o cambiar atritubos o modelos
+solo se debe hacer los cambios en el archivo models.py y aplicar el comando en consola:
+    python manage.py makemigrations
+Luego generará otro archivo con el número siguiente a la migración actual, en este caso, se tenía
+el archivo "0001_initial.py" y ahora se generó el archivo "0002_article_image_alter_article_title_and_more.py"
+
+Luego se vuelve a generar los comandos anteriormente mencionado para cargar los cambios:
+    python manage.py sqlmigrate miapp 0002
+    python manage.py migrate
+
+

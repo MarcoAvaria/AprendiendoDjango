@@ -27,31 +27,43 @@
     <nav>
         <ul>
             <li>
-                <a href="/inicio">Inicio</a>
+                <a href="{% url 'inicio' %}">Inicio</a>
             </li>
             <li>
-                <a href="/hola-mundo">Hola Mundo</a>
+                <!-- <a href="/hola-mundo">Hola Mundo</a> -->
+                <a href="{% url 'hola-mundo' %}">Hola Mundo</a>
             </li>
             <li>
-                <a href="/pagina-pruebas">Página de pruebas</a>
+                <!-- <a href="/pagina-pruebas">Página de pruebas</a> -->
+                <a href="{% url 'pagina-pruebas' %}">Página de pruebas</a>
             </li>
             <li>
-                <a href="/contacto">Contacto</a>
+                <a href="{% url 'contacto' 'Marco' 'Avaria' %}">Contacto</a>
             </li>
         </ul>
     </nav>
 
+    <!-- Debería poder ocupar  
+            "margin-bottom: 100px;"
+        Pero no parece servir -->
+    <!-- <div style="height: 145px;"></div> -->
+    <!-- <hr/> -->
+
+    <div class="barra">
+        <span class="esquina-izquierda"></span>
+        <span class="relleno-barra"></span>
+        <span class="esquina-derecha"></span>
+    </div>
     <div id="content">
-        <h2 class="title">Aquí va el título</h2>
-        {% block content %}
-            <strong>Contenido del bloque original</strong> 
-        {% endblock %}
+        <div class="box">
+            {% block content %}
+                <strong>Contenido del bloque original</strong> 
+            {% endblock %}
+        </div>
     </div>
 
     <footer>
-        Master en Python &copy; Marco Avaria
+        Master en Python &copy; Marco Avaria {% now "d/m/Y" %}
     </footer>    
 </body>
-
-
 </html>

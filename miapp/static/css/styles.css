@@ -9,6 +9,15 @@
     text-decoration: none;
 }
 
+.box p, .box h2, .box h3, .box ul{
+    margin-top: 5;
+    margin-bottom: 5;
+}
+
+ul, ol{
+    margin-left: 50px;
+}
+
 body{
     background-color: #F2F2F2;
 }
@@ -18,13 +27,13 @@ header{
     width: 1220px;
     height: 140px;
     background-color: #23282B;
-    margin: 0px auto;
+    margin: 0 auto;
 }
 
 #logotipo{
     width: 55%;
     height: 130px;
-    margin: 0px auto;
+    margin: 0 auto;
     padding-top: 10px;
 }
 
@@ -42,6 +51,117 @@ header{
     margin-left: 20px;
     letter-spacing: 2px;
     /* text-transform: uppercase; */
-    font-weight: normal;
+    font-weight: lighter;
     color: #2ba977;
+}
+
+/* Navegation bar style */
+
+nav{
+    width: 1250px;
+    height: 40px;
+    margin: 0 auto;
+    /* Ninguna de las siguiente opciones funcionó,
+    tuve que agregar: 
+        
+        <div style="height: 100px;"></div>
+     
+    En el archivo layout para obtener el margen inferior que quería */
+        /* margin: 0 auto 100px auto; */
+        /* margin-bottom: 100px; */
+        /* padding-bottom: 100px; */
+    background-color: #1B1E1F;
+    border: 1px solid #333333;
+    box-shadow: 0px 22px 22px gray;
+    font-size: 15px;
+}
+
+nav ul{
+    list-style: none;
+    text-decoration: none;
+}
+
+nav ul li{
+    line-height: 40px;
+    float: left;
+}
+
+nav ul li a{
+    display: inline; /* Aquí intenté block pero tomaba también title ("Aquí va el título)"*/ 
+    padding: 15px;
+    padding-right: 15px;
+    color: #D1D4D6;
+}
+
+nav ul li a:hover{
+    background: #2ba977;
+    padding: 12px;
+    box-shadow: 0px 0px 5px #444 inset;
+    color: white;
+    transition: all 300ms;
+}
+
+.barra{
+    width: 1250px;
+    margin: 0 auto;
+}
+
+.esquina-izquierda{
+    display: block;
+    border-left: 20px solid transparent;
+    border-top: 10px solid #2B2F30;
+    float: left;
+}
+
+.esquina-derecha{
+    display: block;
+    border-right: 20px solid transparent;
+    border-top: 10px solid #2B2F30;
+    float: right;
+}
+
+.relleno-barra{
+    display: block;
+    width: 1210px;
+    height: 10px;
+    background: #2B2F30;
+    float: left;
+}
+
+/* Central content styles */
+#content{
+    width: 1210px;
+    min-height: 930px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+.box{
+    background: white;
+    width: 95%;
+    min-height: 930px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+.title{
+    color: #444;
+    letter-spacing: 1px;
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+footer{
+    width: 1250px;
+    background-color: #1B1E1F;
+    border: 1px solid #333;
+    color: #D1D4D6;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0px 0px 20px gray;
 }
