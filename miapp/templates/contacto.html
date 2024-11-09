@@ -1,0 +1,11 @@
+﻿{% extends 'layout.html' %}
+
+{% block title %} Contacto {% endblock %}
+
+{% block content %}
+
+    <h1 class="title">Contacto</h1>
+    {% if nombre and apellidos %}
+        <p>El nombre completo es: <strong>{{nombre}} {{apellidos}}</strong></p>
+    {% endif %}
+{% endblock %}
